@@ -1,0 +1,162 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h3>
+          <i class="fas fa-info-circle"></i> About Stroke Prediction System
+        </h3>
+      </div>
+      <div class="card-body">
+        <h4>Project Overview</h4>
+        <p>
+          The Stroke Prediction System is a secure web application designed for
+          healthcare institutions to manage patient data related to stroke
+          prediction and analysis.
+        </p>
+
+        <hr />
+
+        <h4>Key Features</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Secure User
+                Authentication
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Patient Data
+                Management (CRUD)
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Dual Database
+                Architecture
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Input Validation
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> CSRF Protection
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Password Hashing
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Responsive UI Design
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success"></i> Comprehensive Logging
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <h4>Technology Stack</h4>
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <h6><i class="fas fa-server"></i> Backend</h6>
+            <ul>
+              <li>Flask 3.0.0</li>
+              <li>SQLAlchemy</li>
+              <li>PyMongo</li>
+              <li>Flask-Login</li>
+              <li>Flask-WTF</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h6><i class="fas fa-paint-brush"></i> Frontend</h6>
+            <ul>
+              <li>Bootstrap 5</li>
+              <li>Font Awesome</li>
+              <li>Jinja2</li>
+              <li>Custom CSS</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h6><i class="fas fa-database"></i> Database</h6>
+            <ul>
+              <li>SQLite (Authentication)</li>
+              <li>MongoDB (Patient Data)</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <h4>Security Features</h4>
+        <div class="alert alert-info">
+          <h6><i class="fas fa-shield-alt"></i> Enterprise-Level Security</h6>
+          <p class="mb-2">
+            This application implements multiple layers of security:
+          </p>
+          <ul class="mb-0">
+            <li>PBKDF2-SHA256 password hashing</li>
+            <li>CSRF protection on all forms</li>
+            <li>Input validation and sanitization</li>
+            <li>SQL/NoSQL injection prevention</li>
+            <li>XSS prevention through auto-escaping</li>
+            <li>Secure session management</li>
+            <li>Security headers (X-Frame-Options, X-XSS-Protection, etc.)</li>
+            <li>Comprehensive logging without sensitive data exposure</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <h4>Dataset Information</h4>
+        <p>
+          This system manages data from the
+          <strong>Stroke Prediction Dataset</strong>, which includes patient
+          demographics, medical history, lifestyle factors, and health metrics
+          to support stroke risk analysis.
+        </p>
+
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h6>Demographics</h6>
+            <ul>
+              <li>Gender</li>
+              <li>Age</li>
+              <li>Marital Status</li>
+              <li>Work Type</li>
+              <li>Residence Type</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>Health Metrics</h6>
+            <ul>
+              <li>Hypertension Status</li>
+              <li>Heart Disease Status</li>
+              <li>Average Glucose Level</li>
+              <li>BMI</li>
+              <li>Smoking Status</li>
+              <li>Stroke Occurrence</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="text-center mt-4">
+          <p class="text-muted">
+            <i class="fas fa-graduation-cap"></i>
+            Built as a university assessment project demonstrating secure
+            software development practices
+          </p>
+          <p class="mb-0">
+            <strong>Version:</strong> 1.0.0 |
+            <strong>Last Updated:</strong> December 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

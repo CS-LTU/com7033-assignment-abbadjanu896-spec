@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron bg-light p-5 rounded">
+      <h1 class="display-4">
+        <i class="fas fa-heartbeat text-danger"></i> Welcome to Stroke
+        Prediction System
+      </h1>
+      <p class="lead">
+        Secure healthcare data management system for stroke prediction analysis
+      </p>
+      <hr class="my-4" />
+      <p>
+        This system provides comprehensive patient data management with
+        enterprise-level security features.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-database fa-3x text-primary mb-3"></i>
+        <h5 class="card-title">Secure Data Storage</h5>
+        <p class="card-text">
+          Patient records stored securely using MongoDB with user authentication
+          via SQLite
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-users fa-3x text-success mb-3"></i>
+        <h5 class="card-title">Patient Management</h5>
+        <p class="card-text">
+          Complete CRUD operations for patient records with validation and
+          sanitization
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
+        <h5 class="card-title">Enterprise Security</h5>
+        <p class="card-text">
+          CSRF protection, XSS prevention, password hashing, and secure session
+          management
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-12 text-center">
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('main.dashboard') }}" class="btn btn-primary btn-lg">
+      <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+    </a>
+    {% else %}
+    <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg me-2">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+    <a href="{{ url_for('auth.register') }}" class="btn btn-success btn-lg">
+      <i class="fas fa-user-plus"></i> Register
+    </a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-12">
+    <div class="alert alert-info">
+      <h5><i class="fas fa-info-circle"></i> About This System</h5>
+      <p class="mb-0">
+        This web application manages stroke prediction patient data from the
+        Kaggle dataset, implementing secure software development practices
+        including input validation, CSRF protection, password hashing, secure
+        session handling, and comprehensive logging.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

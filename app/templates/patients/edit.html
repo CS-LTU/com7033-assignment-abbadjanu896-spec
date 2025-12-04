@@ -1,0 +1,183 @@
+{% extends "base.html" %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">
+          <i class="fas fa-edit"></i> Edit Patient - ID: {{ patient.patient_id
+          }}
+        </h4>
+      </div>
+      <div class="card-body">
+        <form
+          method="POST"
+          action="{{ url_for('patient.edit_patient', patient_id=patient._id) }}"
+          novalidate
+        >
+          {{ form.hidden_tag() }}
+
+          <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> <strong>Note:</strong> Patient ID
+            cannot be modified.
+          </div>
+
+          <div class="row">
+            <!-- Gender -->
+            <div class="col-md-6 mb-3">
+              {{ form.gender.label(class="form-label") }} {{
+              form.gender(class="form-control " + ("is-invalid" if
+              form.gender.errors else "")) }} {% if form.gender.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.gender.errors %}{{ error }}{% endfor %}
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Age -->
+            <div class="col-md-6 mb-3">
+              {{ form.age.label(class="form-label") }} {{
+              form.age(class="form-control " + ("is-invalid" if form.age.errors
+              else "")) }} {% if form.age.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.age.errors %}{{ error }}{% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Ever Married -->
+            <div class="col-md-6 mb-3">
+              {{ form.ever_married.label(class="form-label") }} {{
+              form.ever_married(class="form-control " + ("is-invalid" if
+              form.ever_married.errors else "")) }} {% if
+              form.ever_married.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.ever_married.errors %}{{ error }}{% endfor
+                %}
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Hypertension -->
+            <div class="col-md-6 mb-3">
+              {{ form.hypertension.label(class="form-label") }} {{
+              form.hypertension(class="form-control " + ("is-invalid" if
+              form.hypertension.errors else "")) }} {% if
+              form.hypertension.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.hypertension.errors %}{{ error }}{% endfor
+                %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Heart Disease -->
+            <div class="col-md-6 mb-3">
+              {{ form.heart_disease.label(class="form-label") }} {{
+              form.heart_disease(class="form-control " + ("is-invalid" if
+              form.heart_disease.errors else "")) }} {% if
+              form.heart_disease.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.heart_disease.errors %}{{ error }}{% endfor
+                %}
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Work Type -->
+            <div class="col-md-6 mb-3">
+              {{ form.work_type.label(class="form-label") }} {{
+              form.work_type(class="form-control " + ("is-invalid" if
+              form.work_type.errors else "")) }} {% if form.work_type.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.work_type.errors %}{{ error }}{% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Residence Type -->
+            <div class="col-md-6 mb-3">
+              {{ form.residence_type.label(class="form-label") }} {{
+              form.residence_type(class="form-control " + ("is-invalid" if
+              form.residence_type.errors else "")) }} {% if
+              form.residence_type.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.residence_type.errors %}{{ error }}{%
+                endfor %}
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Average Glucose Level -->
+            <div class="col-md-6 mb-3">
+              {{ form.avg_glucose_level.label(class="form-label") }} {{
+              form.avg_glucose_level(class="form-control " + ("is-invalid" if
+              form.avg_glucose_level.errors else "")) }} {% if
+              form.avg_glucose_level.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.avg_glucose_level.errors %}{{ error }}{%
+                endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- BMI -->
+            <div class="col-md-6 mb-3">
+              {{ form.bmi.label(class="form-label") }} {{
+              form.bmi(class="form-control " + ("is-invalid" if form.bmi.errors
+              else "")) }} {% if form.bmi.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.bmi.errors %}{{ error }}{% endfor %}
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Smoking Status -->
+            <div class="col-md-6 mb-3">
+              {{ form.smoking_status.label(class="form-label") }} {{
+              form.smoking_status(class="form-control " + ("is-invalid" if
+              form.smoking_status.errors else "")) }} {% if
+              form.smoking_status.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.smoking_status.errors %}{{ error }}{%
+                endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Stroke -->
+            <div class="col-md-6 mb-3">
+              {{ form.stroke.label(class="form-label") }} {{
+              form.stroke(class="form-control " + ("is-invalid" if
+              form.stroke.errors else "")) }} {% if form.stroke.errors %}
+              <div class="invalid-feedback">
+                {% for error in form.stroke.errors %}{{ error }}{% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a
+              href="{{ url_for('patient.view_patient', patient_id=patient._id) }}"
+              class="btn btn-secondary"
+            >
+              <i class="fas fa-times"></i> Cancel
+            </a>
+            {{ form.submit(class="btn btn-primary") }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
